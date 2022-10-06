@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,7 +8,7 @@ const Header = () => {
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:container lg:container md:px-8 lg:px-8">
         <div className="relative flex items-center justify-between">
           <div className="flex items-center ">
-            <Link
+            <NavLink
               to="/"
               aria-label="Company"
               title="Company"
@@ -32,47 +32,63 @@ const Header = () => {
               <span className="ml-2 text-xl font-bold tracking-wide text-gray-700 uppercase">
                 Book Shop
               </span>
-            </Link>
+            </NavLink>
             <ul className="flex items-center hidden space-x-8 lg:flex lg:ml-[58rem] text-[18px]">
               <li>
-                <Link
+                <NavLink
                   to="/home"
                   aria-label="Our product"
                   title="Our product"
-                  className="font-medium tracking-wide text-gray-700 hover:text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-primary font-bold"
+                      : "text-gray-700 font-bold"
+                  }
                 >
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   to="/books"
                   aria-label="Our product"
                   title="Our product"
-                  className="font-medium tracking-wide text-gray-700 hover:text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-primary font-bold"
+                      : "text-gray-700 font-bold"
+                  }
                 >
                   Books
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   to="/price"
                   aria-label="Product pricing"
                   title="Product pricing"
-                  className="font-medium tracking-wide text-gray-700 hover:text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-primary font-bold"
+                      : "text-gray-700 font-bold"
+                  }
                 >
                   Pricing
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   to="/about"
                   aria-label="About us"
                   title="About us"
-                  className="font-medium tracking-wide text-gray-700 hover:text-primary transition-colors duration-200 hover:text-deep-purple-accent-400"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-primary font-bold"
+                      : "text-gray-700 font-bold"
+                  }
                 >
                   About us
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -103,7 +119,7 @@ const Header = () => {
                 <div className="p-5 bg-white border rounded shadow-sm">
                   <div className="flex items-center justify-between mb-4">
                     <div>
-                      <Link
+                      <NavLink
                         to="/"
                         aria-label="Company"
                         title="Company"
@@ -127,7 +143,7 @@ const Header = () => {
                         <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                           Company
                         </span>
-                      </Link>
+                      </NavLink>
                     </div>
                     <div>
                       <button
@@ -148,64 +164,64 @@ const Header = () => {
                   <nav>
                     <ul className="space-y-4">
                       <li>
-                        <Link
+                        <NavLink
                           to="/"
                           aria-label="Our product"
                           title="Our product"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                           Product
-                        </Link>
+                        </NavLink>
                       </li>
                       <li>
-                        <Link
+                        <NavLink
                           to="/"
                           aria-label="Our product"
                           title="Our product"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                           Features
-                        </Link>
+                        </NavLink>
                       </li>
                       <li>
-                        <Link
+                        <NavLink
                           to="/"
                           aria-label="Product pricing"
                           title="Product pricing"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                           Pricing
-                        </Link>
+                        </NavLink>
                       </li>
                       <li>
-                        <Link
+                        <NavLink
                           to="/"
                           aria-label="About us"
                           title="About us"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                           About us
-                        </Link>
+                        </NavLink>
                       </li>
                       <li>
-                        <Link
+                        <NavLink
                           to="/"
                           aria-label="Sign in"
                           title="Sign in"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                           Sign in
-                        </Link>
+                        </NavLink>
                       </li>
                       <li>
-                        <Link
+                        <NavLink
                           to="/"
                           className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                           aria-label="Sign up"
                           title="Sign up"
                         >
                           Sign up
-                        </Link>
+                        </NavLink>
                       </li>
                     </ul>
                   </nav>
