@@ -1,12 +1,28 @@
-import logo from './logo.svg';
+
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
-import Header from './components/Header/Header';
+import About from './components/About/About';
+import Books from './components/Books/Books';
+import Home from './components/Home/Home';
+import Pricing from './components/Pricing/Pricing';
+import Main from './layout/Main';
+const router = createBrowserRouter([
+  {
+    path: '/', element: <Main></Main>, children: [
+      {path: '/', element: <Home></Home>},
+      {path: '/home', element: <Home></Home>},
+      {path: '/books', element: <Books></Books>},
+      {path: '/price', element: <Pricing></Pricing>},
+      {path: '/about', element: <About></About>}
+    ]
+  }
+])
 
 function App() {
   return (
     <div className="App">
-      <Header></Header>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      
+      <RouterProvider router={router}></RouterProvider>
     </div>
   );
 }
